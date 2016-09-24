@@ -17,7 +17,8 @@ public class SampleApi {
     @Path("/echo")
     @Produces(MediaType.TEXT_PLAIN)
     public String echo(@QueryParam("str") String str) {
-        return str;
+        EchoHandler e = new EchoHandler();
+        return e.handle(str);
     }
 
     @GET
